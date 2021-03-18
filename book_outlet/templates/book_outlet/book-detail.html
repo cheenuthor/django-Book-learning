@@ -5,14 +5,22 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{title}}</h1>
-    <h2>{{author}}</h2>
-    <p>The Book has a rating of {{rating}}
-    {% if is_best_selling%}
-    and is a bestseller.
-    {% else%}
-    but isn't a bestseller.
-    {% endif%}
+    
+<div class="d-flex flex-column bd-highlight mb-3 justify-content-center align-items-center">
+  <div class="p-2 bd-highlight">
+    <h1>Book Title : {{title}}</h1>
+  </div>
+  <div class="p-2 bd-highlight">
+    <h2>Book Author : {{author}}</h2>
+  </div>
+  <div class="p-2 bd-highlight">
+    <p>Reviews : The Book has a rating of {{rating}}
+        {% if is_best_selling%}
+        and is a bestseller.
+        {% else%}
+        but isn't a bestseller.
+        {% endif%}
     </p>
+    </div>
+</div>
 {% endblock %}
-
