@@ -5,6 +5,12 @@ All Books
 {% endblock %}
 
 {% block content %}
+<div class="d-flex bd-highlight mb-3">
+  <div class="me-auto p-2 bd-highlight">
+    Number of Books :{{no_of_books}}
+  </div>
+  <div class="p-2 bd-highlight">Average Rating : {{avg_rating.rating__avg}}</div>
+</div>
 
 <table class="table table-sm table-hover ps-5">
   <thead>
