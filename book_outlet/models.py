@@ -14,7 +14,10 @@ class Book(models.Model):
     title = models.CharField(max_length=50)
     rating = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)])
-    author = models.ForeignKey(Author, on_delete=models.CASCADE,null=True)
+    author = models.ForeignKey(
+        Author, on_delete=models.CASCADE, null=True, related_name="books")
+    # if related_name is not set we use Book.objects.author.book_set.all()
+    # else we use Book.objects.author.books.all()
     is_best_selling = models.BooleanField(default=False)
     # db_index makes performance better in querying , don't use it for all.
     slug = models.SlugField(default="", blank=True,
